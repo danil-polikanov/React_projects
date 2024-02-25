@@ -1,4 +1,6 @@
-import CostItem from "./components/CostItem";
+import CostItem from "./components/Costs/CostItem";
+import Costs from "./components/Costs/Costs";
+import InputCosts from "./components/InputCosts/InputCosts";
 
 function App() {
 
@@ -21,16 +23,8 @@ function App() {
   ];
   return (
    <div>
-    <h1>React-Test</h1>
-    <CostItem date={costs[0].date}
-     description={costs[0].description}
-     amount={costs[0].amount}></CostItem>
-    <CostItem date={costs[1].date}
-     description={costs[1].description}
-     amount={costs[1].amount}></CostItem>
-    <CostItem date={costs[2].date}
-     description={costs[2].description}
-     amount={costs[2].amount}></CostItem>
+    <InputCosts></InputCosts>
+    <Costs costs={costs}></Costs>
     </div>
   );
 }

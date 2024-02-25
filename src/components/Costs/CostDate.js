@@ -12,7 +12,7 @@ function CostDate(props){
             <div className="cost-date__year">{year}</div>
             <div className="cost-date__day">{day}</div>
         </div>
-    )
-}
+    );
+};
 
 export default CostDate;
