@@ -2,7 +2,7 @@ import CostForm from './CostForm';
 import './InputCosts.css';
 
 
-const InputCosts=() => {
+const InputCosts=(props) => {
     const saveCostDataHandler=(inputCostData)=>
     {
         console.log(inputCostData)
@@ -10,7 +10,7 @@ const InputCosts=() => {
             ...inputCostData,
             id:Math.random().toString(),
         }
-        console.log(costData)
+        props.onAddCost(costData)
     }
     return (
         <div className='new-cost'>
