@@ -19,8 +19,8 @@ const CostForm=(props)=>{
     const submitHandler=(event)=>{
         event.preventDefault();
         const costData={
-            name:name,
-            sun:sum,
+            description:name,
+            amount:sum,
             date:new Date(date)
         }
         props.onSaveCostData(costData);

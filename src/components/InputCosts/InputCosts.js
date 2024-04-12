@@ -5,11 +5,13 @@ import './InputCosts.css';
 const InputCosts=(props) => {
     const saveCostDataHandler=(inputCostData)=>
     {
-        console.log(inputCostData)
+        
         const costData={
             ...inputCostData,
             id:Math.random().toString(),
         }
+        console.log(inputCostData)
+        props.onAddCost(costData)
 
     }
     return (
