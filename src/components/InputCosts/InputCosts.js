@@ -1,22 +1,28 @@
 import CostForm from './CostForm';
 import './InputCosts.css';
+import React,{useState} from 'react';
 
 
 const InputCosts=(props) => {
+    const[isInputOn,setisInputOn]=useState(false);
     const saveCostDataHandler=(inputCostData)=>
     {
-        
         const costData={
             ...inputCostData,
-            id:Math.random().toString(),
         }
-        console.log(inputCostData)
-        props.onAddCost(costData)
-
+        props.onAddCost(costData);
+        setisInputOn(false);
+    }
+    const inputCostDataHandler=()=>{
+        setisInputOn(true);
+    }
+    const cancelInputCostDataHandler=()=>{
+        setisInputOn(false);
     }
     return (
         <div className='new-cost'>
-        <CostForm onSaveCostData={saveCostDataHandler}></CostForm>
+            {!isInputOn && <button onClick={inputCostDataHandler}>Добавить Новый Расход</button>}
+            {isInputOn && <CostForm onSaveCostData={saveCostDataHandler} onCancelButton={cancelInputCostDataHandler}></CostForm>}
         </div>
     );
 }
